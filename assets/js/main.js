@@ -211,7 +211,7 @@
         <article class="two-card">
           <div class="two-photo">
             <img src="${esc(imgPath(p.image))}" alt="${esc(hasValue(p.alt) ? p.alt : p.name)}" loading="lazy" width="1000" height="1000">
-            <span class="gift-tag"><svg class="hearts" width="30" height="20" viewBox="0 0 30 20" aria-hidden="true"><path d="M9.5 17.5S2 12.8 2 7.4A4.2 4.2 0 0 1 9.5 5a4.2 4.2 0 0 1 7.5 2.4c0 5.4-7.5 10.1-7.5 10.1Z" fill="#93AFD0"/><path d="M19.5 17.5S12 12.8 12 7.4A4.2 4.2 0 0 1 19.5 5 4.2 4.2 0 0 1 27 7.4c0 5.4-7.5 10.1-7.5 10.1Z" fill="#132345" stroke="#FFFFFF" stroke-width="1.4"/></svg><span>made for two</span></span>
+            <span class="pair"><svg width="36" height="22" viewBox="0 0 36 22" aria-hidden="true"><path d="M11 19.5S2.5 14.2 2.5 8.2A4.8 4.8 0 0 1 11 5.3a4.8 4.8 0 0 1 8.5 2.9c0 6-8.5 11.3-8.5 11.3Z" fill="#93AFD0"/><path class="h2" d="M24.5 19.5S16 14.2 16 8.2A4.8 4.8 0 0 1 24.5 5.3 4.8 4.8 0 0 1 33 8.2c0 6-8.5 11.3-8.5 11.3Z" fill="none" stroke="#132345" stroke-width="2.2" stroke-linejoin="round"/></svg>For two</span>
           </div>
           <div class="two-body">
             <h3>${hearts(esc(p.name))}</h3>
