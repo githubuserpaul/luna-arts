@@ -46,8 +46,9 @@
     renderText(page || {});
     wireContact(contact || {});
     renderShop(shop || {}, page || {});
-    renderReviews(Array.isArray(reviews) ? reviews : []);
-    renderFaq(Array.isArray(faq) ? faq : []);
+    // Lists may be stored as a bare array or wrapped in an object (the editor's format)
+    renderReviews(Array.isArray(reviews) ? reviews : (reviews && reviews.reviews) || []);
+    renderFaq(Array.isArray(faq) ? faq : (faq && faq.questions) || []);
     wireContactLinks(document);
   }
 
@@ -90,11 +91,41 @@
 
     // Photos
     const setImg = (sel, path, alt) => { const img = $(sel); if (img && hasValue(path)) { img.src = imgPath(path); if (alt !== undefined) img.alt = alt; } };
-    setImg("#hero-photo-1", page.hero_photo_1, "");
-    setImg("#hero-photo-2", page.hero_photo_2, "");
+    // Hero frames: a list of canvas photos that shuffle (falls back to the old two-photo fields)
+    const heroList = (Array.isArray(page.hero_photos) ? page.hero_photos : [page.hero_photo_1, page.hero_photo_2]).filter(hasValue).map(imgPath);
+    startHeroShuffle(heroList);
     setImg("#about-photo", page.about_photo, "Luna's work table");
     setImg("#collection-photo", page.collection_photo);
     if (page.show_collection === false || page.show_collection === "false") $("#collection").hidden = true;
+  }
+
+  /* ---------- Hero: the two framed canvases shuffle through her paintings ---------- */
+  let heroVisible = true;
+  function startHeroShuffle(photos) {
+    const frames = [...document.querySelectorAll(".stage .frame")];
+    if (!frames.length || !photos.length) return;
+    frames.forEach((f, i) => { const img = f.querySelector("img"); if (img) img.src = photos[i % photos.length]; });
+    if (photos.length <= frames.length || reduceMotion) return; // nothing to shuffle, or the visitor prefers stillness
+    photos.forEach((src) => { const pre = new Image(); pre.src = src; }); // preload so swaps never flash
+    let next = frames.length, turn = 0;
+    setInterval(() => {
+      if (document.hidden || !heroVisible) return;
+      swapFrame(frames[turn % frames.length], photos[next % photos.length]);
+      next++; turn++;
+    }, 3400);
+  }
+  function swapFrame(frame, src) {
+    const old = frame.querySelectorAll("img");
+    const img = new Image();
+    img.alt = ""; img.className = "incoming"; img.src = src;
+    (img.decode ? img.decode() : Promise.resolve()).catch(() => {}).then(() => {
+      frame.appendChild(img);
+      requestAnimationFrame(() => requestAnimationFrame(() => img.classList.add("in")));
+      // a small "picked up and set down" nudge, like swapping a painting on a shelf
+      frame.animate([{ scale: "1", translate: "0 0" }, { scale: "0.95", translate: "0 -6px" }, { scale: "1", translate: "0 0" }],
+        { duration: 650, easing: "cubic-bezier(0.23, 1, 0.32, 1)" });
+      setTimeout(() => old.forEach((o) => o.remove()), 700);
+    });
   }
 
   /* ---------- Contact links ---------- */
@@ -180,7 +211,7 @@
         <article class="two-card">
           <div class="two-photo">
             <img src="${esc(imgPath(p.image))}" alt="${esc(hasValue(p.alt) ? p.alt : p.name)}" loading="lazy" width="1000" height="1000">
-            <span class="pair-badge"><svg width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Set of two</span>
+            <span class="gift-tag"><svg class="hearts" width="30" height="20" viewBox="0 0 30 20" aria-hidden="true"><path d="M9.5 17.5S2 12.8 2 7.4A4.2 4.2 0 0 1 9.5 5a4.2 4.2 0 0 1 7.5 2.4c0 5.4-7.5 10.1-7.5 10.1Z" fill="#93AFD0"/><path d="M19.5 17.5S12 12.8 12 7.4A4.2 4.2 0 0 1 19.5 5 4.2 4.2 0 0 1 27 7.4c0 5.4-7.5 10.1-7.5 10.1Z" fill="#132345" stroke="#FFFFFF" stroke-width="1.4"/></svg><span>made for two</span></span>
           </div>
           <div class="two-body">
             <h3>${hearts(esc(p.name))}</h3>
@@ -217,8 +248,8 @@
           <div class="card-swing${hangs ? " hangs" : ""}">
             <img class="card-img" src="${esc(imgPath(p.image))}" alt="${esc(hasValue(p.alt) ? p.alt : p.name)}" loading="lazy" width="1000" height="1000">
           </div>
-          ${tag ? `<span class="tag">${esc(tag)}</span>` : ""}
         </div>
+        ${tag && inGrid(p) ? `<p class="cat">${esc(tag)}</p>` : ""}
         <h3>${hearts(esc(p.name))}</h3>
         ${hasValue(p.description) ? `<p>${hearts(esc(p.description))}</p>` : ""}
         <div class="meta">
@@ -277,7 +308,10 @@
   // Pause the hero's swaying charms while they're off screen
   const stage = $("#stage");
   if (stage && "IntersectionObserver" in window) {
-    new IntersectionObserver(([entry]) => stage.classList.toggle("is-paused", !entry.isIntersecting)).observe(stage);
+    new IntersectionObserver(([entry]) => {
+      heroVisible = entry.isIntersecting;
+      stage.classList.toggle("is-paused", !entry.isIntersecting);
+    }).observe(stage);
   }
 
   /* ---------- Reviews ---------- */
@@ -291,7 +325,7 @@
           <figcaption><strong>${esc(r.name)}</strong>${hasValue(r.piece) ? ` · ${esc(r.piece)}` : ""}</figcaption>
         </figure>`)
       .join("");
-    $("#reviews").hidden = !list.length;
+    $("#reviews-list").hidden = !list.length; // the section stays, so people can always send a review
   }
 
   /* ---------- FAQ ---------- */

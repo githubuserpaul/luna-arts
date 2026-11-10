@@ -113,12 +113,11 @@ content:
       - name: hero_text
         label: Top · intro text
         type: text
-      - name: hero_photo_1
-        label: Top · left framed photo
+      - name: hero_photos
+        label: Top · framed paintings (they shuffle)
+        description: Add your canvas photos here. The two frames take turns showing them, in this order. Close-up photos of just the painting look best.
         type: image
-      - name: hero_photo_2
-        label: Top · right framed photo
-        type: image
+        list: { min: 1, max: 10 }
       - name: trust
         label: Three little promises (under the hills)
         type: string
@@ -173,6 +172,9 @@ content:
       - name: reviews_note
         label: Reviews · handwritten note
         type: string
+      - name: review_ask
+        label: Reviews · invitation to send a review
+        type: text
       - name: about_title
         label: About · title
         type: string
@@ -212,25 +214,35 @@ content:
     type: file
     path: content/reviews.json
     format: json
-    list: true
     fields:
-      - name: quote
-        label: What they said
-        type: text
-        required: true
-      - name: name
-        label: Their name
-        type: string
-        required: true
-      - name: piece
-        label: What they bought
-        type: string
-      - name: image
-        label: Photo of their piece (optional)
-        type: image
-      - name: alt
-        label: Photo description (optional)
-        type: string
+      - name: reviews
+        label: Reviews
+        description: Tap "Add" for a new review. The first one shows first. Photos are optional.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}: {quote}"
+        fields:
+          - name: quote
+            label: What they said
+            type: text
+            required: true
+          - name: name
+            label: Their name
+            type: string
+            required: true
+          - name: piece
+            label: What they bought
+            description: e.g. custom portrait canvas
+            type: string
+          - name: image
+            label: Photo of their piece (optional)
+            type: image
+          - name: alt
+            label: Photo description (optional)
+            description: Helps blind visitors, e.g. "Painted canvas of two friends".
+            type: string
 
   # ---------------------------------------------------------------- FAQ
   - name: faq
@@ -238,16 +250,23 @@ content:
     type: file
     path: content/faq.json
     format: json
-    list: true
     fields:
-      - name: question
-        label: Question
-        type: string
-        required: true
-      - name: answer
-        label: Answer
-        type: text
-        required: true
+      - name: questions
+        label: Questions
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{question}"
+        fields:
+          - name: question
+            label: Question
+            type: string
+            required: true
+          - name: answer
+            label: Answer
+            type: text
+            required: true
 
   # ---------------------------------------------------------------- CONTACT
   - name: contact
