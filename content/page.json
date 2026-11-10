@@ -1,0 +1,31 @@
+{
+  "hero_eyebrow": "hand-painted by Luna, in India",
+  "hero_title": "Tiny clay charms & moonlit canvases, made just for you.",
+  "hero_highlight": "moonlit",
+  "hero_text": "Keychains, bag charms, phone charms and little acrylic paintings, each one shaped and painted by hand. Love a piece? I'll make it again for you.",
+  "hero_photo_1": "assets/images/canvas-moonlit-hills.jpg",
+  "hero_photo_2": "assets/images/canvas-custom-portrait.jpg",
+  "trust": [
+    "Painted by hand",
+    "Made again on request",
+    "Order in one tap"
+  ],
+  "shop_title": "The little shop",
+  "shop_note": "pick a charm ♡",
+  "reviews_title": "Little notes from happy owners",
+  "reviews_note": "real messages ♡",
+  "about_title": "Hi there! ♡",
+  "about_text": "I'm Luna, a girl with a big imagination and a soft spot for turning simple clay into tiny treasures. I shape and paint every keychain, bag charm and phone charm by hand, and paint little canvases too, one idea at a time.\n\nSometimes it's a flower, sometimes a happy star, sometimes something totally random. I'm still learning and experimenting, but every piece is made with love and patience, and I hope it brings a little smile to your day.",
+  "about_sign": "A little clay, a little creativity and lots of love ♡",
+  "about_photo": "assets/images/luna-desk.jpg",
+  "custom_eyebrow": "made just for you",
+  "custom_title": "Want something one of a kind?",
+  "custom_text": "A charm in someone's favourite colours, a portrait canvas of you and your best friend, a design you've been dreaming up. Share the idea and I'll reply with a price and a date.",
+  "custom_steps": [
+    "Share your idea, budget and date",
+    "Get a sketch and a price",
+    "Your piece is made, packed and sent"
+  ],
+  "faq_title": "Good to know",
+  "footer_note": "a little clay, a little creativity and lots of love ♡"
+}

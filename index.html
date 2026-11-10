@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Luna — handmade clay charms &amp; canvas art</title>
+  <meta name="description" content="Keychains, bag charms, phone charms and little canvases, shaped and painted by hand by Luna. Every piece can be made again just for you.">
+  <meta name="theme-color" content="#132345">
+
+  <!-- Link previews on WhatsApp / Instagram. After the site is online,
+       change og:image and og:url to the full address, e.g. https://yoursite.com/assets/img/og-image.jpg -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Luna — handmade clay charms & canvas art">
+  <meta property="og:description" content="Tiny clay charms and moonlit canvases, made just for you. Keychains ₹90 · Phone charms ₹70.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta property="og:url" content="">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#shop">Skip to the shop</a>
+
+  <!-- Hand-made paper texture, used on the sky-blue hills, buttons and About section -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="paper" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="4" result="n1"/>
+      <feColorMatrix in="n1" type="matrix" values="0 0 0 0 0.07  0 0 0 0 0.14  0 0 0 0 0.27  0.75 0 0 0 -0.32" result="dk"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="11" result="n2"/>
+      <feColorMatrix in="n2" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0.9 0 0 0 -0.5" result="lt"/>
+      <feComposite in="dk" in2="SourceGraphic" operator="in" result="d"/>
+      <feComposite in="lt" in2="SourceGraphic" operator="in" result="l"/>
+      <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="d"/><feMergeNode in="l"/></feMerge>
+    </filter>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 30 30"><path d="M19.5 3.5A11.5 11.5 0 1 0 26.5 21 9 9 0 1 1 19.5 3.5Z" fill="currentColor"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 20 20"><path d="M10 0l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="currentColor"/></symbol>
+  </svg>
+
+  <!-- ================= HEADER ================= -->
+  <header class="hdr">
+    <div class="wrap hdr-top">
+      <a class="logo" href="#top" aria-label="Luna, home">
+        <svg width="30" height="30" aria-hidden="true"><use href="#i-moon"/></svg>
+        <span>luna</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#shop">Shop</a>
+        <a href="#custom">Custom orders</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="hdr-actions">
+        <a class="icon-btn press" data-link="instagram" href="#" target="_blank" rel="noopener" aria-label="Luna on Instagram">
+          <svg width="20" height="20" aria-hidden="true"><use href="#i-insta"/></svg>
+        </a>
+        <a class="btn btn-navy press" data-link="whatsapp" data-message="Hi Luna! I would like to order something." href="#" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+          <svg width="18" height="18" aria-hidden="true"><use href="#i-chat"/></svg>
+          <span>Order<span class="lg-only"> on WhatsApp</span></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO: night sky, hanging charms, hills ================= -->
+    <section id="top" class="hero" aria-labelledby="hero-h">
+      <svg class="stars" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="#C9D7E8">
+          <circle cx="1080" cy="60" r="2"/><circle cx="960" cy="150" r="1.4"/><circle cx="1150" cy="260" r="1.7"/><circle cx="60" cy="330" r="1.5"/>
+          <circle cx="640" cy="40" r="1.3"/><circle cx="1170" cy="420" r="1.3"/><circle cx="420" cy="90" r="1.1"/><circle cx="780" cy="300" r="1.2"/>
+          <circle cx="250" cy="520" r="1.3"/><circle cx="560" cy="210" r="1"/><circle cx="30" cy="80" r="1.4"/>
+        </g>
+      </svg>
+      <svg class="sparkle sp1" width="20" height="20" aria-hidden="true"><use href="#i-sparkle"/></svg>
+      <svg class="sparkle sp2" width="14" height="14" aria-hidden="true"><use href="#i-sparkle"/></svg>
+
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow rise" style="--d:0ms" data-text="hero_eyebrow">hand-painted by Luna, in India</p>
+          <h1 id="hero-h" class="rise" style="--d:60ms" data-hero-title>Tiny clay charms &amp; <em>moonlit</em> canvases, made just for you.</h1>
+          <p class="lead rise" style="--d:120ms" data-text="hero_text">Keychains, bag charms, phone charms and little acrylic paintings, each one shaped and painted by hand. Love a piece? I'll make it again for you.</p>
+          <div class="price-tiles rise" style="--d:180ms" id="price-tiles"></div>
+          <div class="cta-row rise" style="--d:240ms">
+            <a class="btn btn-sky btn-lg press" href="#shop">
+              <svg class="paper" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="100%" fill="#93AFD0" filter="url(#paper)"/></svg>
+              <span>See the shop</span>
+            </a>
+            <a class="btn btn-ghost btn-lg press" href="#custom">Custom order</a>
+          </div>
+        </div>
+
+        <!-- Decorative stage: charms swaying on a string above two of her canvases -->
+        <div class="stage" id="stage" aria-hidden="true">
+          <svg class="string" viewBox="0 0 390 60" preserveAspectRatio="none"><path d="M-10 6 Q195 62 400 6" fill="none" stroke="#C9D7E8" stroke-width="1.5" stroke-dasharray="2 4"/></svg>
+
+          <svg class="charm c1" width="52" height="96" viewBox="0 0 52 96"><line x1="26" y1="0" x2="26" y2="40" stroke="#C9D7E8" stroke-width="1.5"/><circle cx="26" cy="40" r="5" fill="none" stroke="#C9D7E8" stroke-width="2"/><path d="M26 46l6.5 13 14.3 2-10.4 10 2.5 14.2L26 78.5 13.1 85.2l2.5-14.2L5.2 61l14.3-2z" fill="#FFFFFF"/><circle cx="22" cy="65" r="1.6" fill="#132345"/><circle cx="30" cy="65" r="1.6" fill="#132345"/><path d="M22 70q4 3.5 8 0" stroke="#132345" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+          <svg class="charm c2" width="50" height="96" viewBox="0 0 50 96"><line x1="25" y1="0" x2="25" y2="40" stroke="#C9D7E8" stroke-width="1.5"/><circle cx="25" cy="40" r="5" fill="none" stroke="#C9D7E8" stroke-width="2"/><circle cx="25" cy="68" r="20" fill="#C9D7E8"/><path d="M10 52l4 9-8-2zM40 52l-4 9 8-2z" fill="#C9D7E8"/><ellipse cx="25" cy="74" rx="8" ry="6" fill="#93AFD0"/><circle cx="22" cy="74" r="1.6" fill="#132345"/><circle cx="28" cy="74" r="1.6" fill="#132345"/><circle cx="17" cy="64" r="1.6" fill="#132345"/><circle cx="33" cy="64" r="1.6" fill="#132345"/></svg>
+          <svg class="charm c3" width="54" height="100" viewBox="0 0 54 100"><line x1="27" y1="0" x2="27" y2="40" stroke="#C9D7E8" stroke-width="1.5"/><circle cx="27" cy="40" r="5" fill="none" stroke="#C9D7E8" stroke-width="2"/><g fill="#FFFFFF"><ellipse cx="27" cy="56" rx="7" ry="11"/><ellipse cx="27" cy="88" rx="7" ry="11"/><ellipse cx="11" cy="72" rx="11" ry="7"/><ellipse cx="43" cy="72" rx="11" ry="7"/><ellipse cx="16" cy="61" rx="7" ry="11" transform="rotate(-45 16 61)"/><ellipse cx="38" cy="61" rx="7" ry="11" transform="rotate(45 38 61)"/><ellipse cx="16" cy="83" rx="7" ry="11" transform="rotate(45 16 83)"/><ellipse cx="38" cy="83" rx="7" ry="11" transform="rotate(-45 38 83)"/></g><circle cx="27" cy="72" r="8" fill="#93AFD0"/></svg>
+          <svg class="charm c4" width="52" height="96" viewBox="0 0 52 96"><line x1="26" y1="0" x2="26" y2="40" stroke="#C9D7E8" stroke-width="1.5"/><circle cx="26" cy="40" r="5" fill="none" stroke="#C9D7E8" stroke-width="2"/><circle cx="26" cy="68" r="21" fill="#FFFFFF"/><g stroke="#132345" stroke-width="1.3" fill="none"><path d="M26 47v42M5 68h42M11 53l30 30M41 53L11 83"/><circle cx="26" cy="68" r="6"/><circle cx="26" cy="68" r="12"/><circle cx="26" cy="68" r="18"/></g></svg>
+          <svg class="charm c5" width="44" height="92" viewBox="0 0 44 92"><line x1="22" y1="0" x2="22" y2="40" stroke="#C9D7E8" stroke-width="1.5"/><circle cx="22" cy="40" r="5" fill="none" stroke="#C9D7E8" stroke-width="2"/><path d="M27 46a20 20 0 1 0 12 32 16 16 0 1 1-12-32Z" fill="#93AFD0"/></svg>
+
+          <div class="frame f1"><img id="hero-photo-1" src="assets/images/canvas-moonlit-hills.jpg" alt=""></div>
+          <div class="frame f2"><img id="hero-photo-2" src="assets/images/canvas-custom-portrait.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <svg class="hills" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 60 Q280 6 600 50 T1200 36 V110 H0Z" fill="#93AFD0" filter="url(#paper)"/>
+        <path d="M0 92 Q360 54 720 86 T1200 78 V110 H0Z" fill="#F3F6FA"/>
+      </svg>
+    </section>
+
+    <!-- ================= TRUST ROW ================= -->
+    <div class="wrap trust">
+      <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20l4-1L19 8a2.1 2.1 0 0 0-3-3L5 16z"/><path d="M14 7l3 3"/></svg><span data-trust="0">Painted by hand</span></div>
+      <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v4h-4"/></svg><span data-trust="1">Made again on request</span></div>
+      <div><svg width="26" height="26" aria-hidden="true"><use href="#i-chat"/></svg><span data-trust="2">Order in one tap</span></div>
+    </div>
+
+    <!-- ================= SHOP ================= -->
+    <section id="shop" class="wrap section-shop" aria-labelledby="shop-h">
+      <div class="sec-head">
+        <h2 id="shop-h" data-text="shop_title">The little shop</h2>
+        <span class="hand" data-text="shop_note">pick a charm <span aria-hidden="true">♡</span></span>
+      </div>
+      <div class="chips" id="filters" role="group" aria-label="Filter by category"></div>
+      <div class="grid" id="products"></div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section id="reviews" class="wrap section" aria-labelledby="reviews-h">
+      <div class="sec-head">
+        <h2 id="reviews-h" data-text="reviews_title">Little notes from happy owners</h2>
+        <span class="hand" data-text="reviews_note">real messages <span aria-hidden="true">♡</span></span>
+      </div>
+      <div class="rail" id="reviews-list"></div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about" aria-labelledby="about-h">
+      <svg class="paper" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="100%" fill="#93AFD0" filter="url(#paper)"/></svg>
+      <svg class="wave" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H1200V8Q900 30 600 12T0 10Z" fill="#F3F6FA"/></svg>
+      <div class="wrap about-grid">
+        <div class="portrait">
+          <img id="about-photo" src="assets/images/luna-desk.jpg" alt="Luna's paints, brushes and a pink spiderweb charm on her work table" width="432" height="532" loading="lazy">
+        </div>
+        <div class="about-copy">
+          <h2 id="about-h" data-text="about_title">Hi there! <span aria-hidden="true">♡</span></h2>
+          <div data-paras="about_text">
+          <p>I'm Luna, a girl with a big imagination and a soft spot for turning simple clay into tiny treasures. I shape and paint every keychain, bag charm and phone charm by hand, and paint little canvases too, one idea at a time.</p>
+          <p>Sometimes it's a flower, sometimes a happy star, sometimes something totally random. I'm still learning and experimenting, but every piece is made with love and patience, and I hope it brings a little smile to your day.</p>
+          </div>
+          <p class="sign"><svg width="26" height="26" aria-hidden="true"><use href="#i-moon"/></svg><span data-text="about_sign">A little clay, a little creativity and lots of love <span aria-hidden="true">♡</span></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CUSTOM ORDERS ================= -->
+    <section id="custom" class="wrap section" aria-labelledby="custom-h">
+      <div class="custom">
+        <svg class="sparkle sp3" width="16" height="16" aria-hidden="true"><use href="#i-sparkle"/></svg>
+        <div class="custom-copy">
+          <p class="eyebrow" data-text="custom_eyebrow">made just for you</p>
+          <h2 id="custom-h" data-text="custom_title">Want something one of a kind?</h2>
+          <p data-text="custom_text">A charm in someone's favourite colours, a portrait canvas of you and your best friend, a design you've been dreaming up. Share the idea and I'll reply with a price and a date.</p>
+        </div>
+        <div class="custom-steps">
+          <ol id="custom-steps">
+            <li><span class="num">1</span><span>Share your idea, budget and date</span></li>
+            <li><span class="num">2</span><span>Get a sketch and a price</span></li>
+            <li><span class="num">3</span><span>Your piece is made, packed and sent</span></li>
+          </ol>
+          <div class="cta-row">
+            <a class="btn btn-sky btn-lg press" data-link="whatsapp" data-message="Hi Luna! I have an idea for a custom piece." href="#" target="_blank" rel="noopener">
+              <svg class="paper" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="100%" fill="#93AFD0" filter="url(#paper)"/></svg>
+              <span class="btn-inner"><svg width="18" height="18" aria-hidden="true"><use href="#i-chat"/></svg>Start on WhatsApp</span>
+            </a>
+            <a class="btn btn-ghost btn-lg press" data-link="instagram-dm" href="#" target="_blank" rel="noopener">
+              <svg width="18" height="18" aria-hidden="true"><use href="#i-insta"/></svg>DM on Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq" class="wrap wrap-faq section section-last" aria-labelledby="faq-h">
+      <h2 id="faq-h" data-text="faq_title">Good to know</h2>
+      <div class="faq" id="faq-list"></div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <svg class="footer-hills" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 0H1200V30Q900 70 600 34T0 40Z" fill="#F3F6FA"/>
+    </svg>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <span class="logo"><svg width="26" height="26" aria-hidden="true"><use href="#i-moon"/></svg><span>luna</span></span>
+        <p class="hand" data-text="footer_note">a little clay, a little creativity and lots of love <span aria-hidden="true">♡</span></p>
+      </div>
+      <div class="footer-links">
+        <div><span>Shop</span><a href="#shop">All pieces</a><a href="#custom">Custom orders</a></div>
+        <div><span>Help</span><a href="#faq">Delivery and care</a><a href="#about">About Luna</a></div>
+        <div><span>Say hello</span><a data-link="whatsapp" data-message="Hi Luna!" href="#" target="_blank" rel="noopener">WhatsApp</a><a data-link="instagram" href="#" target="_blank" rel="noopener">Instagram</a></div>
+      </div>
+    </div>
+    <p class="wrap copyright">© <span id="year">2026</span> Luna</p>
+  </footer>
+
+  <!-- Small message shown when contact details aren't filled in yet -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

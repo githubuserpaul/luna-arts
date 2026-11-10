@@ -1,0 +1,44 @@
+# Runs automatically whenever a photo is added or changed (e.g. Luna uploads one in Pages CMS).
+# Shrinks big phone photos, fixes rotation, and removes hidden location data.
+name: Optimize photos
+
+on:
+  push:
+    branches: [main]
+    paths: ["assets/images/**"]
+  workflow_dispatch:   # also lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Shrink and clean photos
+        run: |
+          pip install --quiet pillow
+          python .github/scripts/optimize_images.py assets/images
+
+      - name: Save the smaller photos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -n "$(git status --porcelain assets/images)" ]; then
+            git config user.name "luna-photo-helper"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/images
+            git commit -m "Optimize uploaded photos"
+            git push
+            # If the site is on GitHub Pages, ask it to republish with the smaller photos
+            gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null 2>&1 || true
+          else
+            echo "Nothing to change."
+          fi

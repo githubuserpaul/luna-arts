@@ -1,0 +1,16 @@
+[
+  {
+    "quote": "Oh my God, it’s really, really beautiful!",
+    "name": "Glory",
+    "piece": "custom portrait canvas",
+    "image": "assets/images/glory-portrait-canvas.jpg",
+    "alt": "Custom canvas portrait of two friends with white hearts behind them"
+  },
+  {
+    "quote": "It’s beautiful!",
+    "name": "Manasa",
+    "piece": "sun and moon canvas pair",
+    "image": "assets/images/manasa-moon-canvas.jpg",
+    "alt": "Two small canvases forming a blue night sky with a crescent moon beside a yellow band"
+  }
+]
