@@ -254,7 +254,7 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.75re
 .review { flex: 0 0 84%; scroll-snap-align: start; display: flex; flex-direction: column; gap: 14px; padding: 10px 10px 20px; border-radius: 20px; background: var(--white); box-shadow: 0 1px 0 var(--mist), 0 6px 18px rgba(19, 35, 69, 0.07); }
 .review:nth-child(odd) { transform: rotate(-1deg); }
 .review:nth-child(even) { transform: rotate(0.8deg); }
-.review img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; }
+.review img { width: 100%; height: auto; border-radius: 12px; } /* full chat screenshot, no cropping */
 .review blockquote { padding: 0 10px; font-family: var(--font-display); font-size: 1.375rem; line-height: 1.3; }
 .review figcaption { padding: 0 10px; font-size: 0.875rem; color: var(--muted); }
 .review figcaption strong { color: var(--navy); }
