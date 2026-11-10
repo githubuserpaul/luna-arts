@@ -76,6 +76,7 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.75re
 
 /* Hover only where there's a real mouse — no sticky hovers on phones */
 @media (hover: hover) and (pointer: fine) {
+  .btn-outline:hover { border-color: var(--navy); }
   .btn-navy:hover  { background: #0B1630; }
   .btn-sky:hover   { filter: brightness(1.06); }
   .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
@@ -206,6 +207,27 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.75re
 .two-foot b.ask-price { font-size: 0.9375rem; }
 .two-foot .ask { padding: 0 18px; white-space: nowrap; }
 
+/* ---------- The whole collection (one photo of everything) ---------- */
+.collection { display: flex; flex-direction: column; gap: 18px; margin-top: 28px; padding: 14px; border-radius: 22px; background: var(--white); box-shadow: 0 1px 0 var(--mist), 0 8px 22px rgba(19, 35, 69, 0.07); }
+.collection[hidden] { display: none; }
+.collection-photo { overflow: hidden; border-radius: 14px; aspect-ratio: 5 / 6; background: #EEEDEA; }
+.collection-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.collection-copy { display: flex; flex-direction: column; gap: 8px; padding: 0 6px 6px; }
+.collection-copy h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.375rem, 2.4vw, 1.875rem); line-height: 1.15; text-wrap: balance; }
+.collection-copy p:not(.hand) { color: var(--muted); max-width: 46ch; }
+.collection-copy .cta-row { margin: 10px 0 0; }
+.btn-outline { background: var(--white); color: var(--navy); border-color: var(--control-edge); }
+
+/* ---------- Canvas art: its own row ---------- */
+.canvas-art { padding-top: 8px; padding-bottom: 44px; }
+.sec-text { margin: -4px 0 16px; color: var(--muted); max-width: 52ch; }
+.canvas-row {
+  display: flex; gap: 12px; margin: 0 calc(-1 * var(--gutter)); padding: 4px var(--gutter) 14px;
+  overflow-x: auto; scrollbar-width: none; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+}
+.canvas-row::-webkit-scrollbar { display: none; }
+.canvas-row .card { flex: 0 0 64%; scroll-snap-align: start; }
+
 /* ---------- Reviews ---------- */
 .rail {
   display: flex; gap: 14px; margin: 0 calc(-1 * var(--gutter)); padding: 8px var(--gutter) 16px;
@@ -287,6 +309,12 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.75re
   .for-two { padding: 16px 0 56px; }
   .two-rail { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 0; padding: 4px 0 8px; overflow: visible; }
   .two-card { flex: none; }
+  .canvas-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 0; padding: 4px 0 8px; overflow: visible; }
+  .canvas-row .card { flex: none; }
+  .collection { flex-direction: row; align-items: center; gap: 28px; padding: 16px; }
+  .collection-photo { flex: 0 0 34%; max-height: none; }
+  .collection-copy { padding: 0 12px 0 0; }
+  .canvas-art { padding-bottom: 56px; }
   .chips { flex-wrap: wrap; overflow: visible; margin: 0 0 20px; padding: 2px 0; -webkit-mask-image: none; mask-image: none; }
   .trust { display: flex; justify-content: center; gap: 40px; }
   .trust div { display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; }

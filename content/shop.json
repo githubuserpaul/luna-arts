@@ -17,16 +17,6 @@
       "alt": "White clay keychain painted with a pink daisy"
     },
     {
-      "name": "Sun & moon canvas pair",
-      "category": "canvas",
-      "image": "assets/images/canvas-sun-and-moon-pair.jpg",
-      "description": "Two little canvases that join into one sky. One for you, one for them.",
-      "price": null,
-      "hanging": false,
-      "couple": true,
-      "alt": "Two small canvases forming a blue night sky with a crescent moon beside a yellow band"
-    },
-    {
       "name": "Smiley star charm",
       "category": "charms",
       "image": "assets/images/phone-charm-smiley-star.jpg",
@@ -87,16 +77,6 @@
       "alt": "Black clay keychain with a gold-painted flower bouquet"
     },
     {
-      "name": "Moonlit hills",
-      "category": "canvas",
-      "image": "assets/images/canvas-moonlit-hills.jpg",
-      "description": "Blue hills under a pale yellow moon.",
-      "price": null,
-      "hanging": false,
-      "couple": false,
-      "alt": "Small canvas of blue hills under a pale yellow moon"
-    },
-    {
       "name": "Sky blooms keychain",
       "category": "keychains",
       "image": "assets/images/keychain-sky-white-blooms.jpg",
@@ -127,16 +107,6 @@
       "alt": "Small round orange clay charm with green leaves"
     },
     {
-      "name": "Hope",
-      "category": "canvas",
-      "image": "assets/images/canvas-hope.jpg",
-      "description": "Two little canvases that spell hope, with a pink bloom.",
-      "price": null,
-      "hanging": false,
-      "couple": true,
-      "alt": "Red canvas with the word hope and a pink flower"
-    },
-    {
       "name": "Golden fern keychain",
       "category": "keychains",
       "image": "assets/images/keychain-black-gold-fern.jpg",
@@ -157,16 +127,6 @@
       "alt": "Mint clay keychain painted with a red flower"
     },
     {
-      "name": "Custom portrait canvas",
-      "category": "canvas",
-      "image": "assets/images/canvas-custom-portrait.jpg",
-      "description": "You and your favourite people, painted by hand.",
-      "price": null,
-      "hanging": false,
-      "couple": false,
-      "alt": "Painted canvas of two friends on a blue background with white hearts"
-    },
-    {
       "name": "Pink swirl star",
       "category": "keychains",
       "image": "assets/images/keychain-pink-swirl-star.jpg",
@@ -175,6 +135,46 @@
       "hanging": true,
       "couple": false,
       "alt": "Pink clay star keychain with a magenta swirl"
+    },
+    {
+      "name": "Sun & moon canvas pair",
+      "category": "canvas",
+      "image": "assets/images/canvas-sun-and-moon-pair.jpg",
+      "description": "Two little canvases that join into one sky. One for you, one for them.",
+      "price": null,
+      "hanging": false,
+      "couple": true,
+      "alt": "Two small canvases forming a blue night sky with a crescent moon beside a yellow band"
+    },
+    {
+      "name": "Hope",
+      "category": "canvas",
+      "image": "assets/images/canvas-hope.jpg",
+      "description": "Two little canvases that spell hope, with a pink bloom.",
+      "price": null,
+      "hanging": false,
+      "couple": true,
+      "alt": "Two small red canvases, one spelling hope with a pink flower, the other with a big pink flower"
+    },
+    {
+      "name": "Moonlit hills",
+      "category": "canvas",
+      "image": "assets/images/canvas-moonlit-hills-card.jpg",
+      "description": "Blue hills under a pale yellow moon.",
+      "price": null,
+      "hanging": false,
+      "couple": false,
+      "alt": "Small canvas of blue hills under a pale yellow moon"
+    },
+    {
+      "name": "Custom portrait canvas",
+      "category": "canvas",
+      "image": "assets/images/canvas-custom-portrait-card.jpg",
+      "description": "You and your favourite people, painted by hand.",
+      "price": null,
+      "hanging": false,
+      "couple": false,
+      "alt": "Painted canvas of two friends on a blue background with white hearts"
     }
   ]
 }

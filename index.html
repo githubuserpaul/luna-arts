@@ -52,6 +52,7 @@
       </a>
       <nav class="nav" aria-label="Main">
         <a href="#shop">Shop</a>
+        <a href="#canvas">Canvas art</a>
         <a href="#custom">Custom orders</a>
         <a href="#about">About</a>
         <a href="#faq">FAQ</a>
@@ -150,6 +151,36 @@
       </div>
       <div class="chips" id="filters" role="group" aria-label="Filter by category"></div>
       <div class="grid" id="products"></div>
+
+      <!-- The whole collection: one photo of everything, for pieces not listed one by one -->
+      <div class="collection" id="collection">
+        <div class="collection-photo">
+          <img id="collection-photo" src="assets/images/collection-flatlay.jpg" alt="Luna's whole collection of clay keychains and charms laid out on a white cloth" loading="lazy">
+        </div>
+        <div class="collection-copy">
+          <p class="hand" data-text="collection_note">the whole family <span aria-hidden="true">♡</span></p>
+          <h3 data-text="collection_title">Spotted one that's not in the shop?</h3>
+          <p data-text="collection_text">Kitty, avocado, the little sunrise and more. Every piece can be made again, so send me a screenshot of the one you love and I'll make it for you.</p>
+          <div class="cta-row">
+            <a class="btn btn-navy btn-lg press" data-link="whatsapp" data-message="Hi Luna! I saw your collection photo and I'd love one of these:" href="#" target="_blank" rel="noopener">
+              <svg width="18" height="18" aria-hidden="true"><use href="#i-chat"/></svg>Ask on WhatsApp
+            </a>
+            <a class="btn btn-outline btn-lg press" data-link="instagram-dm" href="#" target="_blank" rel="noopener">
+              <svg width="18" height="18" aria-hidden="true"><use href="#i-insta"/></svg>DM on Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CANVAS ART: its own row ================= -->
+    <section id="canvas" class="wrap canvas-art" aria-labelledby="canvas-h" hidden>
+      <div class="sec-head">
+        <h2 id="canvas-h" data-text="canvas_title">Little canvases</h2>
+        <span class="hand" data-text="canvas_note">painted by hand <span aria-hidden="true">♡</span></span>
+      </div>
+      <p class="sec-text" data-text="canvas_text">Small acrylic paintings for your desk, wall or a friend. Portraits and custom scenes too.</p>
+      <div class="canvas-row" id="canvas-list"></div>
     </section>
 
     <!-- ================= REVIEWS ================= -->

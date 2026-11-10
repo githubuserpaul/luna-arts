@@ -15,6 +15,9 @@
     { id: "bags",      label: "Bag charms",   tag: "Bag charm" },
     { id: "canvas",    label: "Canvas art",   tag: "Canvas" },
   ];
+  // Categories shown in their own row instead of the charm grid
+  const OWN_ROW = ["canvas"];
+  const inGrid = (p) => !OWN_ROW.includes(p.category);
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const $ = (sel) => document.querySelector(sel);
@@ -90,6 +93,8 @@
     setImg("#hero-photo-1", page.hero_photo_1, "");
     setImg("#hero-photo-2", page.hero_photo_2, "");
     setImg("#about-photo", page.about_photo, "Luna's work table");
+    setImg("#collection-photo", page.collection_photo);
+    if (page.show_collection === false || page.show_collection === "false") $("#collection").hidden = true;
   }
 
   /* ---------- Contact links ---------- */
@@ -156,6 +161,7 @@
     renderFilters();
     renderProducts();
     renderCouples();
+    renderCanvasRow();
   }
 
   /* ---------- For two (couples) ---------- */
@@ -190,7 +196,7 @@
   }
 
   function renderFilters() {
-    const used = CATEGORIES.filter((c) => products.some((p) => p.category === c.id));
+    const used = CATEGORIES.filter((c) => !OWN_ROW.includes(c.id) && products.some((p) => p.category === c.id));
     $("#filters").innerHTML = [{ id: "all", label: "All" }, ...used]
       .map((t) => `<button type="button" class="chip press" data-filter="${esc(t.id)}" aria-pressed="${t.id === currentFilter}">${esc(t.label)}</button>`)
       .join("");
@@ -224,9 +230,17 @@
   }
 
   function renderProducts() {
-    const list = products.filter((p) => currentFilter === "all" || p.category === currentFilter);
+    const list = products.filter((p) => inGrid(p) && (currentFilter === "all" || p.category === currentFilter));
     $("#products").innerHTML = list.map(productCard).join("");
     wireContactLinks($("#products"));
+  }
+
+  /* ---------- Canvas art: its own row ---------- */
+  function renderCanvasRow() {
+    const list = products.filter((p) => p.category === "canvas");
+    $("#canvas").hidden = !list.length;
+    $("#canvas-list").innerHTML = list.map(productCard).join("");
+    wireContactLinks($("#canvas-list"));
   }
 
   $("#filters").addEventListener("click", (e) => {

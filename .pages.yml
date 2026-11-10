@@ -41,7 +41,7 @@ content:
             options: { min: 0 }
       - name: products
         label: Products
-        description: The order here is the order on the website.
+        description: The order here is the order on the website. Canvas art always appears in its own row under the shop.
         type: object
         list:
           collapsible:
@@ -142,6 +142,31 @@ content:
         label: Word before prices
         description: Shown before every price, e.g. "from" gives "from ₹90". Leave empty to show just "₹90".
         type: string
+      - name: collection_note
+        label: Collection photo · handwritten note
+        type: string
+      - name: collection_title
+        label: Collection photo · title
+        type: string
+      - name: collection_text
+        label: Collection photo · text
+        type: text
+      - name: collection_photo
+        label: Collection photo · photo
+        description: One photo of lots of pieces together, shown under the shop.
+        type: image
+      - name: show_collection
+        label: Collection photo · show it
+        type: boolean
+      - name: canvas_title
+        label: Canvases · title
+        type: string
+      - name: canvas_note
+        label: Canvases · handwritten note
+        type: string
+      - name: canvas_text
+        label: Canvases · text
+        type: text
       - name: reviews_title
         label: Reviews · title
         type: string
