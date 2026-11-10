@@ -34,10 +34,10 @@
     {
       "name": "Spiderweb bag charms",
       "category": "bags",
-      "image": "assets/images/bag-spiderweb.jpg",
+      "image": "assets/images/6757.jpg",
       "description": "A matching pair, one red and one pink. One for each of you.",
-      "hanging": true,
-      "couple": false,
+      "hanging": false,
+      "couple": true,
       "alt": "Two round clay bag charms painted with spiderwebs, one red and one pink"
     },
     {
