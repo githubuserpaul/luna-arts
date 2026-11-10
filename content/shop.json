@@ -9,11 +9,82 @@
     {
       "name": "Pink daisy keychain",
       "category": "keychains",
-      "image": "assets/images/keychain-pink-daisy.jpg",
+      "image": "assets/images/keychain-white-pink-flower.jpg",
       "description": "A soft pink daisy on a white clay round.",
       "price": null,
       "hanging": true,
+      "couple": false,
       "alt": "White clay keychain painted with a pink daisy"
+    },
+    {
+      "name": "Sun & moon canvas pair",
+      "category": "canvas",
+      "image": "assets/images/canvas-sun-and-moon-pair.jpg",
+      "description": "Two little canvases that join into one sky. One for you, one for them.",
+      "price": null,
+      "hanging": false,
+      "couple": true,
+      "alt": "Two small canvases forming a blue night sky with a crescent moon beside a yellow band"
+    },
+    {
+      "name": "Smiley star charm",
+      "category": "charms",
+      "image": "assets/images/phone-charm-smiley-star.jpg",
+      "description": "A happy little star for your phone.",
+      "price": null,
+      "hanging": true,
+      "couple": false,
+      "alt": "Yellow clay star charm with a smiling face"
+    },
+    {
+      "name": "Golden bicycle keychain",
+      "category": "keychains",
+      "image": "assets/images/keychain-black-gold-bicycle.jpg",
+      "description": "A gold-painted bicycle on glossy black clay.",
+      "price": null,
+      "hanging": true,
+      "couple": false,
+      "alt": "Black clay keychain with a gold-painted bicycle"
+    },
+    {
+      "name": "Spiderweb bag charms",
+      "category": "bags",
+      "image": "assets/images/bag-spiderweb.jpg",
+      "description": "A matching pair, one red and one pink. One for each of you.",
+      "price": null,
+      "hanging": true,
+      "couple": true,
+      "alt": "Two round clay bag charms painted with spiderwebs, one red and one pink"
+    },
+    {
+      "name": "Sunny bouquet keychain",
+      "category": "keychains",
+      "image": "assets/images/keychain-lemon-blossom.jpg",
+      "description": "Peach flowers on sunny yellow.",
+      "price": null,
+      "hanging": true,
+      "couple": false,
+      "alt": "Yellow clay keychain painted with peach flowers"
+    },
+    {
+      "name": "Piggy charm",
+      "category": "charms",
+      "image": "assets/images/phone-charm-piggy.jpg",
+      "description": "Tiny oink, big smile.",
+      "price": null,
+      "hanging": true,
+      "couple": false,
+      "alt": "Round pink clay charm with a pig face"
+    },
+    {
+      "name": "Golden bouquet keychain",
+      "category": "keychains",
+      "image": "assets/images/keychain-black-gold-bouquet.jpg",
+      "description": "Gold flowers on a black clay round.",
+      "price": null,
+      "hanging": true,
+      "couple": false,
+      "alt": "Black clay keychain with a gold-painted flower bouquet"
     },
     {
       "name": "Moonlit hills",
@@ -22,70 +93,68 @@
       "description": "Blue hills under a pale yellow moon.",
       "price": null,
       "hanging": false,
+      "couple": false,
       "alt": "Small canvas of blue hills under a pale yellow moon"
     },
     {
-      "name": "Smiley star charm",
-      "category": "charms",
-      "image": "assets/images/charm-smiley-star.jpg",
-      "description": "A happy little star for your phone.",
-      "price": null,
-      "hanging": true,
-      "alt": "Yellow clay star charm with a smiling face"
-    },
-    {
-      "name": "Spiderweb bag charm",
-      "category": "bags",
-      "image": "assets/images/bag-spiderweb.jpg",
-      "description": "A bold web on a clip, in red or pink.",
-      "price": null,
-      "hanging": true,
-      "alt": "Round red clay bag charm with a black spiderweb, on a clip"
-    },
-    {
-      "name": "Sunny bouquet keychain",
+      "name": "Sky blooms keychain",
       "category": "keychains",
-      "image": "assets/images/keychain-sunny-bouquet.jpg",
-      "description": "Peach flowers on sunny yellow.",
+      "image": "assets/images/keychain-sky-white-blooms.jpg",
+      "description": "White wildflowers on sky blue.",
       "price": null,
       "hanging": true,
-      "alt": "Yellow clay keychain painted with peach flowers"
+      "couple": false,
+      "alt": "Light blue clay keychain painted with white wildflowers"
     },
     {
-      "name": "Piggy charm",
-      "category": "charms",
-      "image": "assets/images/charm-piggy.jpg",
-      "description": "Tiny oink, big smile.",
+      "name": "Pastel arc keychain",
+      "category": "keychains",
+      "image": "assets/images/keychain-pastel-arc.jpg",
+      "description": "Soft rainbow arcs in yellow, pink and blue.",
       "price": null,
       "hanging": true,
-      "alt": "Round pink clay charm with a pig face"
+      "couple": false,
+      "alt": "Square clay keychain painted with yellow, pink and blue arcs"
+    },
+    {
+      "name": "Little orange charm",
+      "category": "charms",
+      "image": "assets/images/phone-charm-orange.jpg",
+      "description": "A tiny orange with painted leaves.",
+      "price": null,
+      "hanging": true,
+      "couple": false,
+      "alt": "Small round orange clay charm with green leaves"
     },
     {
       "name": "Hope",
       "category": "canvas",
       "image": "assets/images/canvas-hope.jpg",
-      "description": "Little canvases that spell hope, with a pink bloom.",
+      "description": "Two little canvases that spell hope, with a pink bloom.",
       "price": null,
       "hanging": false,
+      "couple": true,
       "alt": "Red canvas with the word hope and a pink flower"
     },
     {
-      "name": "Sky blooms keychain",
+      "name": "Golden fern keychain",
       "category": "keychains",
-      "image": "assets/images/keychain-sky-blooms.jpg",
-      "description": "White wildflowers on sky blue.",
+      "image": "assets/images/keychain-black-gold-fern.jpg",
+      "description": "A gold fern leaf on a black oval.",
       "price": null,
       "hanging": true,
-      "alt": "Light blue clay keychain painted with white wildflowers"
+      "couple": false,
+      "alt": "Black oval clay keychain with a gold-painted fern"
     },
     {
-      "name": "Little orange charm",
-      "category": "charms",
-      "image": "assets/images/charm-little-orange.jpg",
-      "description": "A tiny orange with painted leaves.",
+      "name": "Red bloom keychain",
+      "category": "keychains",
+      "image": "assets/images/keychain-mint-red-flower.jpg",
+      "description": "A bright red flower on mint.",
       "price": null,
       "hanging": true,
-      "alt": "Small round orange clay charm with green leaves"
+      "couple": false,
+      "alt": "Mint clay keychain painted with a red flower"
     },
     {
       "name": "Custom portrait canvas",
@@ -94,16 +163,8 @@
       "description": "You and your favourite people, painted by hand.",
       "price": null,
       "hanging": false,
+      "couple": false,
       "alt": "Painted canvas of two friends on a blue background with white hearts"
-    },
-    {
-      "name": "Red bloom keychain",
-      "category": "keychains",
-      "image": "assets/images/keychain-red-bloom.jpg",
-      "description": "A bright red flower on mint.",
-      "price": null,
-      "hanging": true,
-      "alt": "Mint clay keychain painted with a red flower"
     },
     {
       "name": "Pink swirl star",
@@ -112,6 +173,7 @@
       "description": "A puffy pink star with a magenta swirl.",
       "price": null,
       "hanging": true,
+      "couple": false,
       "alt": "Pink clay star keychain with a magenta swirl"
     }
   ]

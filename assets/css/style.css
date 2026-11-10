@@ -172,11 +172,39 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.75re
 .card h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.0625rem; line-height: 1.2; margin: 10px 4px 2px; text-wrap: balance; }
 .card p { font-size: 0.84375rem; line-height: 1.4; color: var(--muted); margin: 0 4px 8px; }
 .meta { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: auto 4px 8px; }
-.meta b { font-size: 1.125rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.meta b { font-size: 1.125rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .meta b.ask-price { font-size: 0.9375rem; }
 .meta span { font-size: 0.78125rem; font-weight: 600; color: var(--muted); text-align: right; }
 .load-note { grid-column: 1 / -1; padding: 24px; border: 1.5px dashed var(--sky); border-radius: 14px; text-align: center; color: var(--muted); font-weight: 600; }
 .ask { display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: var(--pill); background: var(--navy); color: var(--white); font-weight: 600; font-size: 0.9375rem; text-decoration: none; }
+
+/* "from ₹90": the word is smaller and lighter so the number stays the hero */
+.from { font-family: var(--font-body); font-size: 0.72em; font-weight: 600; letter-spacing: 0; opacity: 0.8; }
+.price-tile .from { font-size: 0.5em; vertical-align: 0.2em; opacity: 0.85; }
+
+/* ---------- For two (couples) ---------- */
+.for-two { padding: 8px 0 44px; }
+.two-head { display: flex; align-items: center; gap: 14px; }
+.two-mark { flex: none; }
+.two-head h2 { line-height: 1.1; }
+.two-head .hand { display: block; margin-top: 2px; }
+.two-text { margin: 12px 0 18px; color: var(--muted); max-width: 52ch; }
+.two-rail {
+  display: flex; gap: 14px; margin: 0 calc(-1 * var(--gutter)); padding: 4px var(--gutter) 14px;
+  overflow-x: auto; scrollbar-width: none; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+}
+.two-rail::-webkit-scrollbar { display: none; }
+.two-card { flex: 0 0 78%; scroll-snap-align: start; display: flex; flex-direction: column; overflow: hidden; border-radius: 20px; background: var(--white); box-shadow: 0 1px 0 var(--mist), 0 8px 22px rgba(19, 35, 69, 0.08); }
+.two-photo { position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: var(--tile); }
+.two-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pair-badge { position: absolute; top: 10px; left: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: var(--pill); background: var(--navy); color: var(--white); font-size: 0.75rem; font-weight: 700; }
+.two-body { display: flex; flex-direction: column; gap: 6px; flex: 1; padding: 14px 16px 16px; }
+.two-body h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.25rem; line-height: 1.2; }
+.two-body p { font-size: 0.90625rem; line-height: 1.45; color: var(--muted); }
+.two-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 10px; }
+.two-foot b { font-size: 1.125rem; font-weight: 700; white-space: nowrap; }
+.two-foot b.ask-price { font-size: 0.9375rem; }
+.two-foot .ask { padding: 0 18px; white-space: nowrap; }
 
 /* ---------- Reviews ---------- */
 .rail {
@@ -248,11 +276,17 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.75re
 /* =====================================================================
    BIGGER SCREENS
    ===================================================================== */
-@media (max-width: 519px) { .lg-only { display: none; } }
+@media (max-width: 519px) {
+  .lg-only { display: none; }
+  .meta span { display: none; } /* "made again" is already promised in the trust row; keeps small cards tidy */
+}
 
 @media (min-width: 640px) {
   :root { --gutter: 28px; }
   .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .for-two { padding: 16px 0 56px; }
+  .two-rail { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 0; padding: 4px 0 8px; overflow: visible; }
+  .two-card { flex: none; }
   .chips { flex-wrap: wrap; overflow: visible; margin: 0 0 20px; padding: 2px 0; -webkit-mask-image: none; mask-image: none; }
   .trust { display: flex; justify-content: center; gap: 40px; }
   .trust div { display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; }

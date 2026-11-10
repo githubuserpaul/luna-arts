@@ -20,7 +20,7 @@ content:
     fields:
       - name: prices
         label: Prices (₹)
-        description: The price for every product in each category. It also shows in the price boxes at the top of the page. Leave a box empty to show "On request".
+        description: The starting price for each category. It also shows in the price boxes at the top of the page. Leave a box empty to show "On request".
         type: object
         fields:
           - name: keychains
@@ -84,6 +84,10 @@ content:
             label: Hanging charm
             description: Turn on for keychains and charms (adds the little keyring and the swing). Turn off for canvases.
             type: boolean
+          - name: couple
+            label: Show in "For the two of you"
+            description: Turn on for pieces that come as a pair (shown in the couples section near the top, and in the shop).
+            type: boolean
           - name: alt
             label: Photo description (optional)
             description: Helps blind visitors, e.g. "Pink clay star keychain with a swirl".
@@ -119,11 +123,24 @@ content:
         label: Three little promises (under the hills)
         type: string
         list: { min: 3, max: 3 }
+      - name: couples_title
+        label: Couples · title
+        type: string
+      - name: couples_note
+        label: Couples · handwritten note
+        type: string
+      - name: couples_text
+        label: Couples · text
+        type: text
       - name: shop_title
         label: Shop · title
         type: string
       - name: shop_note
         label: Shop · handwritten note
+        type: string
+      - name: price_prefix
+        label: Word before prices
+        description: Shown before every price, e.g. "from" gives "from ₹90". Leave empty to show just "₹90".
         type: string
       - name: reviews_title
         label: Reviews · title

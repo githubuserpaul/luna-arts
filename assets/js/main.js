@@ -42,7 +42,7 @@
   function render({ page, shop, reviews, faq, contact }) {
     renderText(page || {});
     wireContact(contact || {});
-    renderShop(shop || {});
+    renderShop(shop || {}, page || {});
     renderReviews(Array.isArray(reviews) ? reviews : []);
     renderFaq(Array.isArray(faq) ? faq : []);
     wireContactLinks(document);
@@ -133,22 +133,60 @@
   let currentFilter = "all";
   let products = [];
   let prices = {};
+  let pricePrefix = ""; // e.g. "from" → "from ₹90". Set in content/page.json (price_prefix); empty = just "₹90"
   const catById = Object.fromEntries(CATEGORIES.map((c) => [c.id, c]));
   const priceOf = (p) => (hasValue(p.price) ? Number(p.price) : hasValue(prices[p.category]) ? Number(prices[p.category]) : null);
+  const isOn = (v) => v === true || v === "true";
+  // Price label: "from ₹90" (prefix small and lighter)
+  const priceHtml = (n) => `${pricePrefix ? `<small class="from">${esc(pricePrefix)}</small> ` : ""}${rupees(n)}`;
+  const priceWords = (n) => `${pricePrefix ? pricePrefix + " " : ""}${rupees(n)}`;
 
-  function renderShop(shop) {
+  function renderShop(shop, page) {
     prices = shop.prices || {};
+    pricePrefix = hasValue(page.price_prefix) ? String(page.price_prefix).trim() : "";
     products = (shop.products || []).filter((p) => hasValue(p.name) && hasValue(p.image));
 
     // Price tiles in the hero, for categories that have a price
     $("#price-tiles").innerHTML = CATEGORIES
       .filter((c) => hasValue(prices[c.id]))
       .slice(0, 3)
-      .map((c) => `<div class="price-tile"><b>${rupees(prices[c.id])}</b><small>${esc(c.label)}</small></div>`)
+      .map((c) => `<div class="price-tile"><b>${priceHtml(prices[c.id])}</b><small>${esc(c.label)}</small></div>`)
       .join("");
 
     renderFilters();
     renderProducts();
+    renderCouples();
+  }
+
+  /* ---------- For two (couples) ---------- */
+  function renderCouples() {
+    const list = products.filter((p) => isOn(p.couple));
+    const section = $("#for-two");
+    section.hidden = !list.length;
+    if (!list.length) return;
+    $("#two-list").innerHTML = list.map((p) => {
+      const price = priceOf(p);
+      const hasPrice = price != null && !Number.isNaN(price);
+      const message = hasPrice
+        ? `Hi Luna! I would love the ${p.name} (${priceWords(price)}) as a pair. Could you make it for us?`
+        : `Hi Luna! I love the ${p.name} for the two of us. Could you tell me the price?`;
+      return `
+        <article class="two-card">
+          <div class="two-photo">
+            <img src="${esc(imgPath(p.image))}" alt="${esc(hasValue(p.alt) ? p.alt : p.name)}" loading="lazy" width="1000" height="1000">
+            <span class="pair-badge"><svg width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Set of two</span>
+          </div>
+          <div class="two-body">
+            <h3>${hearts(esc(p.name))}</h3>
+            ${hasValue(p.description) ? `<p>${hearts(esc(p.description))}</p>` : ""}
+            <div class="two-foot">
+              ${hasPrice ? `<b>${priceHtml(price)}</b>` : `<b class="ask-price">On request</b>`}
+              <a class="ask press" data-link="whatsapp" data-message="${esc(message)}" href="#" target="_blank" rel="noopener">${hasPrice ? "Ask for this pair" : "Ask for price"}</a>
+            </div>
+          </div>
+        </article>`;
+    }).join("");
+    wireContactLinks($("#two-list"));
   }
 
   function renderFilters() {
@@ -164,7 +202,7 @@
     const hangs = p.hanging === true || p.hanging === "true";
     const tag = catById[p.category]?.tag || "";
     const message = hasPrice
-      ? `Hi Luna! I would love a ${p.name} (${rupees(price)}). Could you make one for me?`
+      ? `Hi Luna! I would love a ${p.name} (${priceWords(price)}). Could you make one for me?`
       : `Hi Luna! I love the ${p.name}. Could you tell me the price?`;
     return `
       <article class="card">
@@ -178,7 +216,7 @@
         <h3>${hearts(esc(p.name))}</h3>
         ${hasValue(p.description) ? `<p>${hearts(esc(p.description))}</p>` : ""}
         <div class="meta">
-          ${hasPrice ? `<b>${rupees(price)}</b>` : `<b class="ask-price">On request</b>`}
+          ${hasPrice ? `<b>${priceHtml(price)}</b>` : `<b class="ask-price">On request</b>`}
           <span>Made to order</span>
         </div>
         <a class="ask press" data-link="whatsapp" data-message="${esc(message)}" href="#" target="_blank" rel="noopener">${hasPrice ? "Ask to buy" : "Ask for price"}</a>
